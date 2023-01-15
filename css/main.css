@@ -1,0 +1,9 @@
+*{
+    list-style: none;
+    border: 0;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+}
+.body{
+    background-color: blue;
+}
