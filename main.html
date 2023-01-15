@@ -4,83 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
     <title>Pizzaria 1999</title>
 </head>
-<body>
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-    <header id="cabecalho">
-        <div id="topo">
-            <img src="assets/logo.PNG" alt="Pizzaria 1999">
-            <article id="menu">
-                <a href="">Entrar</a>
-                <a href="">Cardápi
-                    
-                    
-                    o/a>
-
-
-
-                <a href="">S   obre Nós</a>
-                <a href="">Con
-                    tato</a>
-            </article>
-            
-        </div>
-        <div id="topo">
-            <img src="assets/logo.PNG" alt="Pizzaria 1999">
-            <article id="menu">
-                <a href="">Entdwdwrar</a>
-                <a href="">Cardápio/a>
-                <a href="">Sodwdwbre Nós</a>
-                <a href="">Contato</a>
-            </article>
-            
-        </div>
-        <div id="topo">
-            <img src="assets/logo.PNG" alt="Pizzaria 1999">
-            <article id="menu">
-                <a href="">Entrar</a>
-                <a href="">Cardápio/a>
-                <a href="">Sodwdwbre Nós</a>
-                <a href="">Contato</a>
-            </article>
-            
-        </div>
-        <div id="topo">
-            <img src="assets/logo.PNG" alt="Pizzaria 1999">
-            <article id="menu">
-                <a href="">Entrar</a>
-
-                
-                <a href="">Cardápio/a>
-                <a href="">Sobre Nós</a>
-                <a href="">Contadwdto</a>
-            </article>
-            
-        </div>
+    <header>
+        <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">Sobre Nós</a></li>
+            <li><a href="#login">Login</a></li>
+        </ul>
+        </nav>
     </header>
-    <main>
-        <div id="imagem">
-            <img src="assets/principal.PNG" alt="Forno Com Pizza">
-        </div>
-        <div id="cardapio">
-
-        </div>
-    </main>
-    <footer></footer>
+    <section id="home">
+        <h1>Bem-vindo à Pizzaria do Zé</h1>
+        <p>Aqui você encontra as melhores pizzas da cidade</p>
+    </section>
+    <section id="menu">
+        <h2>Menu</h2>
+            <ul>
+                <li>Margherita</li>
+                <li>Pepperoni</li>
+                <li>Vegetariana</li>
+                <li>Calabresa</li>
+            </ul>
+    </section>
+    <section id="about">
+        <h2>Sobre Nós</h2>
+        <p>A Pizzaria do Zé foi fundada em 1990 e desde então, temos orgulho de oferecer as melhores pizzas da cidade. Todos os nossos ingredientes são frescos e de qualidade.</p>
+    </section>
+    <section id="login">
+        <h2>Login</h2>
+        <form>
+        <label for="username">Nome de usuário:</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Entrar">
+        </form>
+        <p>Não tem uma conta? <a href="#signup">Cadastre-se aqui</a></p>
+    </section>
 </body>
 </html>
