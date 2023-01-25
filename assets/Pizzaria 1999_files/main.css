@@ -70,7 +70,7 @@
 }
 #card_1 img{
     margin-top: 10px;
-    width: 50%;
+    width: 100%;
     height: 100%;
     padding: 1%;
     object-fit: contain;
@@ -87,8 +87,8 @@
 }
 #card_2 img{
     margin-top: 10px;
-    width: 50%;
-    height: 100%;
+    width: 100%;
+    height: 10%;
     padding: 1%;
     object-fit: contain;
 }
@@ -104,8 +104,8 @@
 }
 #card_3 img{
     margin-top: 10px;
-    width: 50%;
-    height:50%;
+    width: 100%;
+    height: 60%;
     padding: 1%;
 }
 #card_4{
@@ -120,7 +120,7 @@
 }
 #card_4 img{
     margin-top: 10px;
-    width: 50%;
+    width: 100%;
     height: 170%;
     padding: 1%;
     object-fit: contain;
