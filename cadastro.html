@@ -9,15 +9,16 @@
 <body>
     <main id="corpo">
         <h1>Página de Cadastro de Usuário:</h1>
-        <form action="#" method="post">
+        <form action="controllers/cadastro.php" method="post">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required>
 
             <button type="submit">Cadastrar</button>
             <button type="reset">Limpar Dados</button>
