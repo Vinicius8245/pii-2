@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+
     
     <title>Pizzaria 1999</title>
 </head>
@@ -12,13 +13,17 @@
         <nav>
             <img id="logo" src="assets/logo.PNG" alt="Pizzaria 1999">
             <ul id="lista">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
+                <li><a href="login.php">Login</a></li>
                 <li><a href="#about">Sobre</a></li>
-                <li><a href="#login">Login</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
             </ul>
         </nav>
     </header>
+<body>
+    <?php    
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/projeto/pii-2/controllers/banco.php";
+    ?>
     <main id="corpo">
         <section id="primeira_pagina">
             <img  id="imagem_home" src="assets/principal.PNG" alt="Pizzaria 1999">
@@ -50,12 +55,12 @@
         </section>
         <section id="login">
             <h2>Login</h2>
-            <form>
+            <form action="main.php" method="post">
             <label for="username">Nome de usuário:</label>
-            <input type="text" id="username" name="username">
+            <input type="text" id="login" name="login">
             <label for="password">Senha:</label>
-            <input type="password" id="password" name="password">
-            <input type="submit" value="Entrar">
+            <input type="password" id="password" name="senha">
+            <input type="submit" value="entrar" names="entrar">
             </form>
             <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
         </section>

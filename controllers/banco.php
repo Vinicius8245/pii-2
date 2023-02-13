@@ -28,7 +28,7 @@ switch ($sgbd) {
 				
 			);
 		} catch (PDOException $e) {
-			die($e->getMessage());
+			die($e->getMessage("Não foi possível conectar com o banco de dados!"));
 		}
         break;
     case "sqlite":
@@ -40,6 +40,4 @@ switch ($sgbd) {
 							
         break;
 }
-echo "Banco de Dados Conectado Com Sucesso";
-
 ?>
