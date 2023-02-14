@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-
-    
     <title>Pizzaria 1999</title>
+
+
 </head>
     <header id="topo">
         <nav>
@@ -23,6 +23,13 @@
 <body>
     <?php    
     include_once $_SERVER['DOCUMENT_ROOT'] . "/projeto/pii-2/controllers/banco.php";
+    session_start();
+   // if((!isset ($_SESSION['username']) == true) and (!isset ($_SESSION['password']) == true)){
+   //     header('location:main.php');
+   // }else{
+   //     header('location:login.php');
+   // }
+   //     $logado = $_SESSION['login'];
     ?>
     <main id="corpo">
         <section id="primeira_pagina">
@@ -54,15 +61,6 @@
             <p>A Pizzaria do Zé foi fundada em 1990 e desde então, temos orgulho de oferecer as melhores pizzas da cidade. Todos os nossos ingredientes são frescos e de qualidade.</p>
         </section>
         <section id="login">
-            <h2>Login</h2>
-            <form action="main.php" method="post">
-            <label for="username">Nome de usuário:</label>
-            <input type="text" id="login" name="login">
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="senha">
-            <input type="submit" value="entrar" names="entrar">
-            </form>
-            <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
         </section>
     </main>
 </body>
