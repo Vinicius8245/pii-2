@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="icon" href="assets/capa.png">
     <title>Página de Login</title>
   </head>
 <body>
@@ -19,7 +20,7 @@
           <label for="name">Digite a Senha:</label>
           <input type="password" name="password" required>
           
-          <button type="submit">Entrar</button>
+          <button type="submit" name="login">Entrar</button>
         </form>
     </div>
     <div class="box">
@@ -28,23 +29,30 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . "/projeto/pii-2/controllers/banco.php";
 
-  if(isset( $_POST['username']) AND isset( $_POST['password'])){
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  $query = "SELECT nm_usuario FROM pizzaria.tb_usuario WHERE nm_usuario = '$username' AND sn_senha = '$password'";
+  session_start();
 
-  $result = $conn->prepare($query);
-  $result->execute();
-  if ($result->rowCount() > 0) {
-    $_SESSION['logged_in'] = true;
-    $_SESSION['username'] = $username;
-  
-    header("Location: main.php");
-    exit;
-    } else {
-  echo "Nome de usuário ou senha inválido";
-  echo "<br>",$username;
+  if(isset( $_POST['username']) AND isset( $_POST['password'])){
+    $_SESSION['username'] = $_POST['username'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $query = "SELECT nm_usuario FROM pizzaria.tb_usuario WHERE nm_usuario = '$username' AND sn_senha = '$password'";
+
+
+
+    $result = $conn->prepare($query);
+    $result->execute();
+    if ($result->rowCount() > 0) {
+      $_SESSION['logged_in'] = true;
+      $_SESSION['username'] = $username;
+    
+      header("Location: main.php");
+      if(isset($_GET['erro'])){
+        $erro = 'É necessário logar para acessar o sistema!';
+      }
+      exit;
+      } else {
+    echo "<script> alert('Usuário ou Senha incorretos!'); </script>";
+    }
   }
-}
 
 ?>

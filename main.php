@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="assets/capa.png">
     <title>Pizzaria 1999</title>
 
 
@@ -13,6 +14,7 @@
         <nav>
             <img id="logo" src="assets/logo.PNG" alt="Pizzaria 1999">
             <ul id="lista">
+                
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="login.php">Login</a></li>
                 <li><a href="#about">Sobre</a></li>
@@ -21,16 +23,6 @@
         </nav>
     </header>
 <body>
-    <?php    
-    include_once $_SERVER['DOCUMENT_ROOT'] . "/projeto/pii-2/controllers/banco.php";
-    session_start();
-   // if((!isset ($_SESSION['username']) == true) and (!isset ($_SESSION['password']) == true)){
-   //     header('location:main.php');
-   // }else{
-   //     header('location:login.php');
-   // }
-   //     $logado = $_SESSION['login'];
-    ?>
     <main id="corpo">
         <section id="primeira_pagina">
             <img  id="imagem_home" src="assets/principal.PNG" alt="Pizzaria 1999">
@@ -54,6 +46,7 @@
                     <h2>• Pizza de Peperoni</h2>
                     <img src="assets/pizza_peperoni.png" alt="Peperoni">
                 </div>
+                 
             </div>
         </section>
         <section id="about">
@@ -63,5 +56,9 @@
         <section id="login">
         </section>
     </main>
+    <?php 
+        include_once $_SERVER['DOCUMENT_ROOT'] . "/projeto/pii-2/controllers/banco.php";
+        include_once $_SERVER['DOCUMENT_ROOT'] . "/projeto/pii-2/controllers/verificarLogin.php";
+    ?> 
 </body>
 </html>
