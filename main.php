@@ -17,8 +17,8 @@
                 
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="login.php">Login</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="listaUsuario.php">Sobre</a></li>
+                <li><a href="novoCadastro.html">Cadastro</a></li>
             </ul>
         </nav>
     </header>
