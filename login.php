@@ -4,55 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="icon" href="assets/capa.png">
     <title>Página de Login</title>
   </head>
-<body>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Pizzaria 1999 </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <div id="login">
-        <h1>Faça seu Login</h1>
-        <form id="formulario" action="login.php" method="POST">
-          <label for="name">Digite seu Usuário:</label>
-          <input type="text" name="username" required>
-
-          
-          <label for="name">Digite a Senha:</label>
-          <input type="password" name="password" required>
-          
-          <button type="submit" name="login">Entrar</button>
-        </form>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <h1 class="text-center">Bem Vindo a Pizzaria 1999</h1>
+          <form id="formulario" action="login.php" method="POST">
+            <div class="mb-3">
+              <label for="name" class="form-label">Digite seu Usuário:</label>
+              <input type="text" class="form-control" name="username" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Digite a Senha:</label>
+              <input type="password" class="form-control" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100" name="login">Entrar</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <div class="box">
-</body>
+    <?php
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/projeto/pii-2/controllers/verificarLogin.php";
+    ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
-<?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "/projeto/pii-2/controllers/banco.php";
-
-  session_start();
-
-  if(isset( $_POST['username']) AND isset( $_POST['password'])){
-    $_SESSION['username'] = $_POST['username'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $query = "SELECT nm_usuario FROM pizzaria.tb_usuario WHERE nm_usuario = '$username' AND sn_senha = '$password'";
-
-
-
-    $result = $conn->prepare($query);
-    $result->execute();
-    if ($result->rowCount() > 0) {
-      $_SESSION['logged_in'] = true;
-      $_SESSION['username'] = $username;
-    
-      header("Location: main.php");
-      if(isset($_GET['erro'])){
-        $erro = 'É necessário logar para acessar o sistema!';
-      }
-      exit;
-      } else {
-    echo "<script> alert('Usuário ou Senha incorretos!'); </script>";
-    }
-  }
-
-?>

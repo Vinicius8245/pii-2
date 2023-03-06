@@ -8,7 +8,8 @@ function db_insert_teste($nome, $senha, $email) {
 	//return $conn->insert_id;
 	return null;
 }
-var_dump($_REQUEST);
+echo "<script> alert('Usuário Excluído com Sucesso!'); </script>";
+header("Location: /projeto/pii-2/main.php");
 $usuario = $_REQUEST['nome'];
 $senha = $_REQUEST['senha'];
 $email = $_REQUEST['email'];

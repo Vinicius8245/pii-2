@@ -1,3 +1,7 @@
+<?php 
+        include_once $_SERVER['DOCUMENT_ROOT'] . "/projeto/pii-2/controllers/banco.php";
+        
+    ?> 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,8 +21,13 @@
                 
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="login.php">Login</a></li>
-                <li><a href="listaUsuario.php">Sobre</a></li>
+                <li><a href="listaUsuario.php">Usuários</a></li>
                 <li><a href="novoCadastro.html">Cadastro</a></li>
+                <button  type=submit><a href="logout.php">Logout</a>
+                <?php 
+                    include_once $_SERVER['DOCUMENT_ROOT'] . "/projeto/pii-2/controllers/verificarLogin.php";
+                ?>
+                </button>
             </ul>
         </nav>
     </header>
@@ -28,37 +37,43 @@
             <img  id="imagem_home" src="assets/principal.PNG" alt="Pizzaria 1999">
         </section>
         <section id="menu">
-            <h1>Menu</h1>
+            <h1>Seja Bem Vindo a Pizzaria 1999,<?php echo $_SESSION['username'];  ?> </h1>
             <div id="lista_pizzas">
                 <div id="card_1">
                     <h2>• Pizza de Calabresa</h2>
-                    <img src="assets/pizza_calabresa.png" alt="Calabresa">
+                    <img src="assets/1.png" alt="Calabresa">
                 </div>
                 <div id="card_2">
                     <h2>• Pizza Vegetariana</h2>
-                    <img src="assets/pizza_vegetariana.png" alt="Vegetariana">
+                    <img src="assets/2.png" alt="Vegetariana">
                 </div>
                 <div id="card_3">
                     <h2>• Pizza de Margherita</h2>
-                    <img src="assets/pizza_margherita.png" alt="Margherita">
+                    <img src="assets/3.png" alt="Margherita">
                 </div>
                 <div id="card_4">
                     <h2>• Pizza de Peperoni</h2>
-                    <img src="assets/pizza_peperoni.png" alt="Peperoni">
+                    <img src="assets/4.png" alt="Peperoni">
                 </div>
                  
             </div>
         </section>
         <section id="about">
             <h2>Sobre Nós</h2>
-            <p>A Pizzaria do Zé foi fundada em 1990 e desde então, temos orgulho de oferecer as melhores pizzas da cidade. Todos os nossos ingredientes são frescos e de qualidade.</p>
+            <p id="teste">A Pizzaria do 1999 foi fundada em 2022 e desde então, temos orgulho de oferecer as <br>
+                melhores pizzas da cidade. Todos os nossos ingredientes são fresco se de qualidade.
+            </p>
+            <br><br>
+            <pre>
+            • A empresa 1999 Pizza de CNPJ 48.025.312/0001-86, fundada em 21/09/2022 e com razão <br>
+            social 1999 Pizza LTDA, está localizada na cidade Porto Alegre do estado Rio Grande <br>
+            do Sul. Sua atividade principal, conforme a Receita Federal, é 56.20-1-04 - <br>
+            Fornecimento de alimentos preparados preponderantemente para consumo domiciliar.
+            </pre>
+            <br><br><br><br><br><br><br>
         </section>
-        <section id="login">
-        </section>
+        
     </main>
-    <?php 
-        include_once $_SERVER['DOCUMENT_ROOT'] . "/projeto/pii-2/controllers/banco.php";
-        include_once $_SERVER['DOCUMENT_ROOT'] . "/projeto/pii-2/controllers/verificarLogin.php";
-    ?> 
+    
 </body>
 </html>

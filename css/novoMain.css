@@ -138,9 +138,5 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(../assets/capa.png);
-}
-#about p {
-    text-align: center;
-    color: white;
+    background-color: aquamarine;
 }
