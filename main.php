@@ -1,7 +1,10 @@
 <?php 
-        include_once $_SERVER['DOCUMENT_ROOT'] . "/projeto/pii-2/controllers/banco.php";
+      session_start();
+      if(!isset($_SESSION['username'])){
+        header('Location: login.php');
+      }
         
-    ?> 
+?> 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,7 +28,8 @@
                 <li><a href="novoCadastro.html">Cadastro</a></li>
                 <button  type=submit><a href="logout.php">Logout</a>
                 <?php 
-                    include_once $_SERVER['DOCUMENT_ROOT'] . "/projeto/pii-2/controllers/verificarLogin.php";
+                
+                    
                 ?>
                 </button>
             </ul>

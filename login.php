@@ -40,6 +40,11 @@
               <input type="password" class="form-control" name="password" required>
             </div>
             <button type="submit" class="btn btn-primary w-100" name="login">Entrar</button>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary w-100" name="cadastro">
+              <a href="novoCadastro.html" style="color:white;" >Cadastrar no Sistema</a>
+            </button>
           </form>
         </div>
       </div>
